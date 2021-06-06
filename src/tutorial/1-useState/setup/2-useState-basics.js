@@ -10,12 +10,15 @@ const UseStateBasics = () => {
 
   // Destructuring to use the useState, define a const variable with [text, setText] could be name whatever I want and initialize to useState 
   const [text, setText] = useState('Example');
-
+  const handleClick = () => {
+    // setText or the second value of the useState is a function
+    setText('New text')
+  }
   return (
     <React.Fragment>
       <h1>{text}</h1>
+      <button className='btn' onClick={handleClick}>Press me!</button>
     </React.Fragment>
-
   );
 };
 
