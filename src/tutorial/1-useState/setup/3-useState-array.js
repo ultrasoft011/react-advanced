@@ -4,9 +4,10 @@ import { data } from '../../../data'
 const UseStateArray = () => {
   // Second way to use the hook useState with React.useState
   const [people, setPeople] = React.useState(data)
-  const handle = () => {
-    setPeople([])
-  }
+  // First way to handle the useState function second argument
+  // const handle = () => {
+  //   setPeople([])
+  // }
   return <>
     {people.map((element) => {
       //Destructuring the element (every single object inside the data array) by "id" and "name"
@@ -17,8 +18,8 @@ const UseStateArray = () => {
         </div>
       )
     })}
-    <button className='btn' onClick={handle}>Clear me</button>
-
+    {/* Second way to handle the useState function */}
+    <button className='btn' onClick={() => { setPeople([])}}>Clear me</button>
   </>
 };
 
