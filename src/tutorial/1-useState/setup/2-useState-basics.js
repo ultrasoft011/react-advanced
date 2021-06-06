@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 // useState is a function that came from React
 
+//Hooks Fundamentals: 
+// 1. The hooks must start with "use"
+// 2. Components name must be in UpperCase like "UseStateBasics"
+// 3. The hook must be in the function or component body
+
 const UseStateBasics = () => {
   console.log(useState());
   // useState will return an array with a value and a function to handle that value
@@ -12,7 +17,12 @@ const UseStateBasics = () => {
   const [text, setText] = useState('Example');
   const handleClick = () => {
     // setText or the second value of the useState is a function
-    setText('New text')
+    if (text === 'Example') {
+      setText('New text')
+    }
+    else {
+      setText('Example')
+    }
   }
   return (
     <React.Fragment>
