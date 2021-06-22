@@ -8,7 +8,7 @@ const UseStateCounter = () => {
   };
   const ComplexIncrease = () => {
     setTimeout(() => {
-      {/* pass as argument a prevState or previos state to let Javascript know about the previous value that it should take into account */}
+      {/* pass as argument a prevState or previous state to let Javascript know about the previous value that it should take into account */}
       setElement((prevState) => {
         return prevState + 1;
       });
