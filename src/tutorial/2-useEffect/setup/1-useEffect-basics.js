@@ -7,7 +7,9 @@ const UseEffectBasics = () => {
   const [value, setValue] = useState(0);
   // useEffect: by default it will rerender whatever is inside in the callback function
   useEffect(() => {
-    console.log('Pressed!')
+    // I can change the title of the window using this hook
+    document.title = `New messages (${value})`;
+    console.log('Pressed!');
   })
   return (
   <div>
