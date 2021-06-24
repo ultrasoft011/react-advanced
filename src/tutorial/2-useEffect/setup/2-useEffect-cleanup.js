@@ -17,8 +17,15 @@ const UseEffectCleanup = () => {
     setSize(window.innerWidth);
   }
   useEffect(() => {
+    console.log('use effect');
     window.addEventListener('resize', checkSize)
-  });
+    // Returning a function inside the useEffect when I using event listeners will prevent to have leak of memory, inside this function I need to call the window.removeEventListener to clean up the code
+    // return () => {
+    //   console.log('clean up');
+    //   window.removeEventListener('resize', checkSize);
+    // }
+    // Dependency: It will only runs one the useEffect hook so the event listener will run only once, but the clean up is still important when React renders a component and disappear it.
+  }, []);
   return <>
     <h1>{size}</h1>
   </>;
